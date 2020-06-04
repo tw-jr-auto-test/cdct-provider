@@ -1,7 +1,7 @@
 package com.thoughtworks.cdct.user_interface;
 
 import com.thoughtworks.cdct.domain.Person;
-import com.thoughtworks.cdct.domain.PersonService;
+import com.thoughtworks.cdct.application.PersonService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;

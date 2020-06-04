@@ -1,7 +1,7 @@
 package com.thoughtworks.cdct;
 
 import com.thoughtworks.cdct.domain.Person;
-import com.thoughtworks.cdct.domain.PersonService;
+import com.thoughtworks.cdct.application.PersonService;
 import com.thoughtworks.cdct.user_interface.PersonRestController;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.jupiter.api.BeforeEach;

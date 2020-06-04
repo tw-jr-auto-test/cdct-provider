@@ -1,6 +1,7 @@
 
-package com.thoughtworks.cdct.domain;
+package com.thoughtworks.cdct.application;
 
+import com.thoughtworks.cdct.domain.Person;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
