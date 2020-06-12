@@ -3,6 +3,7 @@ package person
 import org.springframework.cloud.contract.spec.Contract
 
 Contract.make {
+    inProgress()
     description "should return person by id=1"
 
     request {
@@ -16,7 +17,7 @@ Contract.make {
             contentType applicationJson()
         }
         body (
-                id: 1,
+                id: $(anyNumber()),
                 name: "foo",
                 surname: "bee"
         )

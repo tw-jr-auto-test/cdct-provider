@@ -14,7 +14,6 @@ plugins {
 }
 
 apply plugin: 'spring-cloud-contract'
-apply plugin: 'maven-publish'
 
 group = 'com.thoughtworks'
 version = '0.0.1-SNAPSHOT'
@@ -28,28 +27,11 @@ ext {
 	set('springCloudVersion', "Hoxton.SR5")
 }
 
-bootJar {
-	archiveFileName = 'contract-provider'
-	archiveVersion = '0.0.1-SNAPSHOT'
-}
-
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
 	testImplementation 'org.springframework.cloud:spring-cloud-starter-contract-verifier'
 }
 
-publishing {
-	publications {
-		stubs(MavenPublication) {
-			artifactId "${project.name}-stubs"
-			artifact verifierStubsJar
-		}
-	}
-}
 
 dependencyManagement {
 	imports {
@@ -60,6 +42,7 @@ dependencyManagement {
 contracts {
 	packageWithBaseClasses = 'com.thoughtworks.cdct'
 	testFramework = org.springframework.cloud.contract.verifier.config.TestFramework.JUNIT5
+//	testMode = 'Explicit'
 }
 
 test {
